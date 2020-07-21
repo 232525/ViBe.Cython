@@ -33,9 +33,7 @@ ext_modules = cythonize([
               include_dirs=[os.getcwd(), np.get_include()],  # path to .h file(s), np.get_include(): avoid fatal error: numpy/arrayobject.h: No such file or directory”
               library_dirs=[os.getcwd()],  # path to .a or .so file(s)
               libraries=['vibe-background-sequential'])  # 静态库文件libvibe-background-sequential.a的名称
-])
-# , annotate=True
-
+], annotate=True)
 
 setup(
     name='Demos',
