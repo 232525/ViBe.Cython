@@ -1,6 +1,6 @@
 # ViBe.Cython
 
-Python reimplementation of ViBe based on Cython.
+Python reuse of ViBe source C code based on Cython.
 
 Original paper: [ViBe: A universal background subtraction algorithm for video sequences](http://orbi.ulg.ac.be/bitstream/2268/145853/1/Barnich2011ViBe.pdf)
 
@@ -21,4 +21,4 @@ cd ViBe.Cython
 python vibe_test.py
 ```
 
-[My CSDN Blog](https://blog.csdn.net/Ricardo232525/article/details/107484483)
+[My CSDN Blog: 利用Cython打包复用ViBe运动目标检测C源码](https://blog.csdn.net/Ricardo232525/article/details/107484483)
