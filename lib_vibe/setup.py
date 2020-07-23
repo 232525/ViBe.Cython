@@ -16,11 +16,13 @@ import numpy as np
 
 # For demo purposes, we build our own tiny library.
 try:
-    print("building libmymath.a")
+    print("building libvibe-background-sequential.a")
     # 将C代码编译为.o目标文件
-    assert os.system("gcc -shared -fPIC -c vibe-background-sequential.c -o vibe-background-sequential.o") == 0
+    # assert os.system("gcc -shared -fPIC -c vibe-background-sequential.c -o vibe-background-sequential.o") == 0
+    assert os.system("gcc -std=c99 -O3 -Wall -Werror -pedantic -Wno-unused-function -Wno-unused-parameter -Wno-deprecated -Wno-deprecated-declarations -Wno-sign-compare -Wno-unused-but-set-parameter -shared -fPIC -c vibe-background-sequential.c  -o vibe-background-sequential.o") == 0
     # 将.o目标文件编译为.a静态库文件
     assert os.system("ar rcs libvibe-background-sequential.a vibe-background-sequential.o") == 0
+    print('built libvibe-background-sequential.a')
 except:
     if not os.path.exists("libvibe-background-sequential.a"):
         print("Error building external library, please create libmymath.a manually.")
