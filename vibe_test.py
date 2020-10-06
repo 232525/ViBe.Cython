@@ -1,3 +1,21 @@
+import cv2
+import numpy as np
+import time
+from lib_vibe.py_vibe import ViBe
+
+cap = cv2.VideoCapture('PATH/OF/THE/VIDEO')
+
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = cap.get(cv2.CAP_PROP_FPS)
+print('fps: %s' % fps)
+print('shape: (%d, %d)' % (frame_width, frame_height))
+
+fourcc = cv2.VideoWriter_fourcc('M', 'P', '4', '2')
+video_out = cv2.VideoWriter('./output_vibe.avi', fourcc, fps, (frame_width, frame_height), 0)
+
+vibe = ViBe()
+
 frame_cnt = 0
 read_time = 0
 write_time = 0
