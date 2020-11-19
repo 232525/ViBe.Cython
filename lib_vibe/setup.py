@@ -19,7 +19,9 @@ try:
     print("building libvibe-background-sequential.a")
     # 将C代码编译为.o目标文件
     # assert os.system("gcc -shared -fPIC -c vibe-background-sequential.c -o vibe-background-sequential.o") == 0
-    assert os.system("gcc -std=c99 -O3 -Wall -Werror -pedantic -Wno-unused-function -Wno-unused-parameter -Wno-deprecated -Wno-deprecated-declarations -Wno-sign-compare -Wno-unused-but-set-parameter -shared -fPIC -c vibe-background-sequential.c  -o vibe-background-sequential.o") == 0
+    # assert os.system("gcc -std=c99 -O3 -Wall -Werror -pedantic -Wno-unused-function -Wno-unused-parameter -Wno-deprecated -Wno-deprecated-declarations -Wno-sign-compare -Wno-unused-but-set-parameter -shared -fPIC -c vibe-background-sequential.c  -o vibe-background-sequential.o") == 0
+    assert os.system("gcc -std=c99 -O3 -Wall -Werror -pedantic -Wno-unused-function -Wno-unused-parameter -Wno-deprecated -Wno-deprecated-declarations -Wno-sign-compare -fPIC -c vibe-background-sequential.c  -o vibe-background-sequential.o") == 0
+    
     # 将.o目标文件编译为.a静态库文件
     assert os.system("ar rcs libvibe-background-sequential.a vibe-background-sequential.o") == 0
     print('built libvibe-background-sequential.a')
